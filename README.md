@@ -1,10 +1,10 @@
 # CompanyInsight AI (V1)
 
-First structured version of an automated company research tool.
+First version automated company research tool.
 
-## What we made?
+## What I made?
 
-We built a full-stack AI tool that takes a company website URL and returns structured business insights.
+I built a full-stack AI tool that takes a company website URL and returns structured business insights.
 
 Output fields:
 - `company_name`
@@ -166,3 +166,18 @@ Planned improvements for next versions:
 - Optional result persistence (DB)
 - Docker support
 - Automated tests for agents and API
+
+
+## Future Add-ons (Roadmap)
+
+1. Multi-URL batch analysis
+- Analyze multiple company websites in one request and export combined results.
+
+2. PDF/CSV export
+- One-click export for reports and outreach workflows.
+
+3. Async job processing
+- Move long analysis runs to background workers with job status tracking.
+
+4. Docker deployment
+- Add Dockerfile + docker-compose for one-command local/prod setup.
