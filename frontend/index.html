@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Insight AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="container">
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Company Insight AI
+      </div>
+      <a href="/static/index.html" class="nav-link active">Analyzer</a>
+      <a href="/static/how-it-works.html" class="nav-link">How It Works</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+      <div class="badge">● AI Powered</div>
+      <h1>Company Insight AI</h1>
+      <p>Automated company research powered by intelligent AI agents</p>
+    </header>
+
+    <!-- INPUT CARD -->
+    <div class="input-card">
+      <label class="input-label">Company Website URL</label>
+      <div class="input-row">
+        <div class="input-wrapper">
+          <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <input id="urlInput" type="text" placeholder="https://stripe.com">
+        </div>
+        <button class="btn-analyze" onclick="analyzeCompany()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Analyze
+        </button>
+      </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading" class="loading hidden">
+      <div class="loading-inner">
+        <div class="spinner-ring"></div>
+        <div class="loading-text">
+          AI agents analyzing the company
+          <span class="dots"><span>.</span><span>.</span><span>.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="resultSection" class="result-section hidden">
+      <div class="result-header">
+        <div class="result-title-group">
+          <div class="result-dot"></div>
+          <h2>Company Insights</h2>
+        </div>
+        <span class="result-badge">Analysis Complete</span>
+      </div>
+
+      <div class="cards-grid">
+        <div class="insight-card">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Company Name
+          </div>
+          <div id="company_name" class="card-value large"></div>
+        </div>
+
+        <div class="insight-card">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Industry
+          </div>
+          <div id="industry" class="card-value"></div>
+        </div>
+
+        <div class="insight-card full">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Summary
+          </div>
+          <div id="summary" class="card-value"></div>
+        </div>
+
+        <div class="insight-card">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Products / Services
+          </div>
+          <div id="products_services" class="card-value"></div>
+        </div>
+
+        <div class="insight-card">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Target Customers
+          </div>
+          <div id="target_customers" class="card-value"></div>
+        </div>
+
+        <div class="insight-card full accent-card">
+          <div class="card-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Pain Points
+          </div>
+          <div id="pain_points" class="card-value"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
