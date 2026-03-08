@@ -7,6 +7,10 @@ First version automated company research tool.
 Frontend + backend are deployed here:
 - [Open Live App](https://company-insight-ai-automated-compan.vercel.app/)
 
+## Demo Video
+
+- [Watch on YouTube](https://youtu.be/hQQ61tpcltY)
+
 Quick API test (PowerShell):
 
 ```powershell
