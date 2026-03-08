@@ -5,7 +5,7 @@ First version automated company research tool.
 ## Live Deployment
 
 Frontend + backend are deployed here:
-- `https://company-insight-ai-automated-compan.vercel.app/`
+- [Open Live App](https://company-insight-ai-automated-compan.vercel.app/)
 
 Quick API test (PowerShell):
 
@@ -172,7 +172,7 @@ frontend/
 
 ## Version Note
 
-This is the first structured version (V1).
+This is the first V1.
 
 Planned improvements for next versions:
 - Better error handling and retries
