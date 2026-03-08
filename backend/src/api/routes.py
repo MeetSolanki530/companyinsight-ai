@@ -6,11 +6,6 @@ from fastapi.exceptions import HTTPException
 
 router = APIRouter()
 
-@router.get("/")
-def analyze_company():
-    return {"success" : "Welcome to Company Insight AI Backend!"}
-
-
 @router.post("/analyze-company")
 def analyze_company(request : RequestSchema):
     

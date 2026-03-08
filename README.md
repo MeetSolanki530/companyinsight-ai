@@ -2,6 +2,20 @@
 
 First version automated company research tool.
 
+## Live Deployment
+
+Frontend + backend are deployed here:
+- `https://company-insight-ai-automated-compan.vercel.app/`
+
+Quick API test (PowerShell):
+
+```powershell
+Invoke-RestMethod -Method Post `
+  -Uri "https://company-insight-ai-automated-compan.vercel.app/analyze-company" `
+  -ContentType "application/json" `
+  -Body '{"url":"https://stripe.com"}'
+```
+
 ## What I made?
 
 I built a full-stack AI tool that takes a company website URL and returns structured business insights.
@@ -103,7 +117,7 @@ uvicorn app:app --reload --port 8080
 ### 5) Open frontend
 
 Option A:
-- Open `http://127.0.0.1:8080/frontend`
+- Open `http://127.0.0.1:8080/`
 
 Option B:
 - Open `frontend/index.html` manually (if API calls are configured to backend URL)
